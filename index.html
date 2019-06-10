@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="third-party/fontawesome-5.9.0/css/all.css">
+    <link rel="stylesheet" href="third-party/bootstrap-4.3.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <script src="js/lib/jquery-min.js"></script>
+    <script src="third-party/bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+    <script src="js/main.js"></script>
+
+    <div id="header-msg">
+        Lets create a datagrid using the column master.
+        Click <b>Add/Delete Column</b> button to add/delete column details for the datagrid. 
+            <br>
+            Once all the column details are entered press <b>Create Datagrid</b> button to see the final datagrid.
+    </div>
+
+    <div id="column-master-container">
+        <div class="invalid-feedback" id="create-error">
+            No Column added. Please add atleast one to create a result table.
+        </div>
+        <div class="invalid-feedback" id="delete-error">
+            No Column selected. Please select atleast one to delete.
+        </div>
+        <div id="button-bar">
+            <div id="table-header">Column Master</div>
+            <button type="button" id="add-col" class="btn btn-outline-secondary"><i class="fas fa-plus"></i>Add Column</button>
+            <button type="button" id="delete-col" class="btn btn-outline-secondary"><i class="fas fa-times"></i>Delete Column</button>
+        </div>
+        <div id="column-master">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>                                                    
+                        <th id='select-all'><input type='checkbox'></th>
+                        <th>Column Name</th>
+                        <th>Column Type</th>
+                        <th>Editable</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <button id=create-result class="btn btn-outline-primary">Create Datagrid</button>
+    </div>
+
+    <div id="result-datagrid-container">
+        <div id="button-bar">
+            <div id="table-header">Result Datagrid</div>
+            <button type="button" id="add-row" class="btn btn-outline-secondary"><i class="fas fa-plus"></i>Add Row</button>
+        </div>
+        <div id="result-datagrid">
+            <table class="table table-bordered">
+                <thead>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog"  id="add-col-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Column</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="needs-validation">
+                            <div class="form-group">
+                                <label for="colNameTxt">Column Name</label>
+                                <input type="text" name="colNameTxt" id="colNameTxt" class="form-control" required>
+                                <div class="invalid-feedback" id="no-col-name-err">
+                                    Please enter a column name.
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="colTypeSelect">Columne Type</label>
+                                <select name="colTypeSelect" id="colTypeSelect" class="form-control">
+                                    <option value="String">String</option>
+                                    <option value="Number">Number</option>
+                                    <option value="Date">Date</option>
+                                    <option value="Boolean">Boolean</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="editableSelect">Editable</label>
+                                <select name="editableSelect" id="editableSelect" class="form-control">
+                                    <option value="Y">Yes</option>
+                                    <option value="N">No</option>
+                                </select>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" id="saveColumnDetailsBtn">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

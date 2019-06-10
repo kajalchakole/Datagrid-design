@@ -1,0 +1,54 @@
+body {
+    margin: 20px;
+}
+
+#column-master-container {
+    margin: 50px;
+    padding: 50px;
+    width: 900px;
+    border: 1px solid #555;
+}
+
+#result-datagrid-container {    
+    margin: 50px;
+    padding: 50px;
+    display: none;
+}
+
+#column-master {
+    padding-top: 20px;
+}
+
+th#select-all {
+    width: 40px;
+}
+
+#table-header {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.fas {
+    padding-right: 5px;
+}
+
+.fa-plus {
+    color: #008200;
+}
+
+.fa-times {
+    color: #8a0300;
+}
+
+#create-result {
+    float: right;
+}
+
+#button-bar {
+    margin: 10px;
+}
+
+th {
+    background-color: #d1cec8;
+}
